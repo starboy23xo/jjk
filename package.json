@@ -1,0 +1,11 @@
+{
+  "name": "craft-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Craft Studio — ideas deserve good design.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node build.mjs && python3 -m http.server 8899 --directory dist"
+  }
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="canonical" href="{{SITE}}{{PATH}}">
+<meta name="theme-color" content="#e9e6e1">
+<meta name="author" content="Craft Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Craft Studio">
+<meta property="og:title" content="{{OGTITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:url" content="{{SITE}}{{PATH}}">
+<meta property="og:image" content="{{SITE}}/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Craft Studio — ideas deserve good design.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{OGTITLE}}">
+<meta name="twitter:description" content="{{DESC}}">
+<meta name="twitter:image" content="{{SITE}}/assets/img/og.png">
+
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="/assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/craft.css">
+<script src="/assets/js/craft.js" defer></script>
+<script type="application/ld+json">{{JSONLD}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="/" aria-label="Craft Studio — home">
+      <span class="brand__dot" aria-hidden="true"></span>
+      Craft Studio
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {{NAV}}
+    </nav>
+
+    <a class="btn btn--sm hdr__cta" href="/contact/">
+      Start a project <span class="arw" aria-hidden="true">&rarr;</span>
+    </a>
+
+    <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <nav class="drawer__nav" aria-label="Mobile">
+    {{DRAWER}}
+  </nav>
+  <div class="drawer__foot">
+    <a class="btn btn--block" href="/contact/">
+      Start a project <span class="arw" aria-hidden="true">&rarr;</span>
+    </a>
+    <div class="drawer__meta">
+      <a href="https://wa.me/916383283116" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="mailto:craftstudio2k26@gmail.com">Email</a>
+      <a href="https://www.instagram.com/craftstudio__" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+{{BODY}}
+</main>
+
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__top">
+      <div class="ftr__col">
+        <img class="ftr__logo" src="/assets/img/logo-wordmark.webp" alt="Craft Studio" width="800" height="466" loading="lazy" decoding="async">
+        <p class="ftr__tag">Ideas deserve<br>good design.</p>
+        <p class="small muted">Design &bull; Web &bull; Digital<br>AI &bull; Automation &bull; Software &bull; Career</p>
+      </div>
+
+      <div class="ftr__col">
+        <h2>Navigate</h2>
+        <a href="/work/">Work</a>
+        <a href="/services/">Services</a>
+        <a href="/process/">Process</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </div>
+
+      <div class="ftr__col">
+        <h2>Say hello</h2>
+        <a href="https://wa.me/916383283116" target="_blank" rel="noopener noreferrer">WhatsApp: 6383283116</a>
+        <a href="tel:+916383283116">Call: 6383283116</a>
+        <a href="mailto:craftstudio2k26@gmail.com">craftstudio2k26@gmail.com</a>
+        <a href="https://www.instagram.com/craftstudio__?utm_source=qr&amp;igsi=MW9pN2kwbXA2a3Bp" target="_blank" rel="noopener noreferrer">Instagram: @craftstudio__</a>
+      </div>
+    </div>
+
+    <div class="ftr__bot">
+      <p>&copy; <span data-year>2026</span> Craft Studio. All rights reserved.</p>
+      <p class="hand hand--accent" style="font-size:1.15rem">No shortcuts. Just good craft.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

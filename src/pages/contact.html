@@ -1,0 +1,117 @@
+<!--meta
+{
+  "title": "Contact — let's make something | Craft Studio",
+  "ogTitle": "Let's make something — Craft Studio",
+  "description": "Tell Craft Studio what you're trying to build, improve or solve. WhatsApp 6383283116, email craftstudio2k26@gmail.com, or send the sketch straight from the form.",
+  "path": "/contact/",
+  "priority": "0.9"
+}
+meta-->
+
+<section class="hero shell is-in" data-reveal>
+  <p class="hero__label hand hand--accent hand--md">&#9998; 05 &mdash; Contact</p>
+  <h1 class="h1"><span class="mask"><span>Let&rsquo;s make</span></span><span class="mask"><span style="--d:100">something.</span></span></h1>
+  <p class="lead" style="margin-top:clamp(20px,2.4vw,34px)">You don&rsquo;t need everything figured out before you contact us. Start with the idea &mdash; we&rsquo;ll figure out the next line together.</p>
+</section>
+
+<section class="section" aria-labelledby="form-h" data-reveal>
+  <div class="shell">
+    <div class="grid grid--split">
+      <div class="stack stack--lg">
+        <h2 class="h3" id="form-h">Send the sketch.</h2>
+        <p class="body muted">Fill this in and it opens WhatsApp with your message ready to send. Prefer email? There&rsquo;s a link for that too.</p>
+
+        <div class="contact-list">
+          <a href="https://wa.me/916383283116" target="_blank" rel="noopener noreferrer"><span class="contact-list__k">WhatsApp</span><span class="contact-list__v">6383283116</span></a>
+          <a href="tel:+916383283116"><span class="contact-list__k">Phone</span><span class="contact-list__v">6383283116</span></a>
+          <a href="mailto:craftstudio2k26@gmail.com"><span class="contact-list__k">Email</span><span class="contact-list__v">craftstudio2k26@gmail.com</span></a>
+          <a href="https://www.instagram.com/craftstudio__?utm_source=qr&amp;igsi=MW9pN2kwbXA2a3Bp" target="_blank" rel="noopener noreferrer"><span class="contact-list__k">Instagram</span><span class="contact-list__v">@craftstudio__</span></a>
+        </div>
+
+        {{> char-sketcher }}
+      </div>
+
+      <form class="form" id="project-form" novalidate data-whatsapp="916383283116" data-email="craftstudio2k26@gmail.com">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+          <p class="field__err">Please add a name so we know who we&rsquo;re talking to.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-service">What can we help with?</label>
+          <select id="f-service" name="service" required>
+            <option value="" selected disabled>Choose a service</option>
+            <option>Artificial Intelligence</option>
+            <option>AI Automation</option>
+            <option>Python Programming</option>
+            <option>Web Development</option>
+            <option>Website Design</option>
+            <option>Digital Marketing</option>
+            <option>Custom Software Development</option>
+            <option>Resume, LinkedIn &amp; Portfolio</option>
+            <option>Placement &amp; Career Support</option>
+            <option>Not sure yet</option>
+          </select>
+          <p class="field__err">Pick the closest option &mdash; &ldquo;not sure yet&rdquo; is a real answer.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-message">Tell us about the idea</label>
+          <textarea id="f-message" name="message" placeholder="What are you trying to build, improve or solve?" required></textarea>
+          <p class="field__hint">A few lines is plenty. Rough is fine.</p>
+          <p class="field__err">Give us a line or two about the idea.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-contact">WhatsApp / email</label>
+          <input id="f-contact" name="contact" type="text" placeholder="Where should we reply?" autocomplete="email" required>
+          <p class="field__err">We need a way to reply to you.</p>
+        </div>
+
+        <p class="form__status" id="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+
+        <div class="btn-row">
+          <button class="btn" type="submit">Send the sketch <span class="arw" aria-hidden="true">&rarr;</span></button>
+          <a class="btn btn--ghost" href="mailto:craftstudio2k26@gmail.com">Email instead <span class="arw" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-h" data-reveal>
+  <div class="shell">
+    <div class="sec-head">
+      <div><span class="sec-head__index">FAQ</span><h2 class="h2" id="faq-h">Before we start.</h2></div>
+      <p class="body">Short answers to the things people ask first.</p>
+    </div>
+
+    <div class="faq">
+      <div class="faq__item">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="cf-1">Is Craft Studio new?<span class="faq__ico" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="cf-1"><div><p>Yes. Craft Studio is newly established, while the people behind the studio bring previous experience.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="cf-2">Do you build custom projects?<span class="faq__ico" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="cf-2"><div><p>Yes. Requirements are discussed first, then the right approach is defined.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="cf-3">Can you handle both design and development?<span class="faq__ico" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="cf-3"><div><p>Yes.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="cf-4">Do you provide AI and automation?<span class="faq__ico" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="cf-4"><div><p>Yes, for suitable business and workflow requirements.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="cf-5">Do you provide career services?<span class="faq__ico" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="cf-5"><div><p>Yes. Resume, LinkedIn, portfolio and placement/career support are available.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="cf-6">How do I start?<span class="faq__ico" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="cf-6"><div><p>Tell us what you&rsquo;re trying to build, improve or solve.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
