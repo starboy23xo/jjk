@@ -16,4 +16,12 @@
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    # The site loads nothing off-origin: fonts, images, CSS and JS are all
+    # self-hosted, so a strict default-src covers every real resource.
+    # style-src needs 'unsafe-inline' for the inline --i/--d custom-property
+    # attributes used to stagger reveal animations; nothing else is inline.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"

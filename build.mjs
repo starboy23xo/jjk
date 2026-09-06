@@ -72,6 +72,16 @@ const minifyCss = (css) =>
     .replace(/\s+/g, ' ')
     .trim();
 
+// Plain-string .replace() treats "$" sequences in the replacement as special
+// patterns ($&, $1, $', …). Templating with a function side-steps that so a
+// future title/description containing "$" can never silently corrupt output.
+const sub = (html, token, value) => html.replace(token, () => value);
+
+// A string value landing inside <script type="application/ld+json"> could in
+// principle contain "</script" and prematurely close the tag; escape it so
+// the JSON always stays inert data regardless of what it contains.
+const escapeForInlineScript = (json) => json.replace(/<\/(script)/gi, '<\\/$1');
+
 const navHtml = (current, cls) =>
   NAV.map(
     (n, i) =>
@@ -114,20 +124,20 @@ async function build() {
       }
     }
 
-    const ld = meta.jsonld
-      ? JSON.stringify([JSONLD, meta.jsonld])
-      : JSON.stringify(JSONLD);
+    const ld = escapeForInlineScript(
+      meta.jsonld ? JSON.stringify([JSONLD, meta.jsonld]) : JSON.stringify(JSONLD)
+    );
 
-    const html = base
-      .replace('{{TITLE}}', meta.title)
-      .replace(/\{\{OGTITLE\}\}/g, meta.ogTitle || meta.title)
-      .replace(/\{\{DESC\}\}/g, meta.description)
-      .replace(/\{\{PATH\}\}/g, meta.path)
-      .replace(/\{\{SITE\}\}/g, SITE)
-      .replace('{{JSONLD}}', ld)
-      .replace('{{NAV}}', navHtml(meta.path, 'nav__link'))
-      .replace('{{DRAWER}}', navHtml(meta.path, 'drawer__link'))
-      .replace('{{BODY}}', body);
+    let html = base;
+    html = sub(html, '{{TITLE}}', meta.title);
+    html = html.replace(/\{\{OGTITLE\}\}/g, () => meta.ogTitle || meta.title);
+    html = html.replace(/\{\{DESC\}\}/g, () => meta.description);
+    html = html.replace(/\{\{PATH\}\}/g, () => meta.path);
+    html = html.replace(/\{\{SITE\}\}/g, () => SITE);
+    html = sub(html, '{{JSONLD}}', ld);
+    html = sub(html, '{{NAV}}', navHtml(meta.path, 'nav__link'));
+    html = sub(html, '{{DRAWER}}', navHtml(meta.path, 'drawer__link'));
+    html = sub(html, '{{BODY}}', body);
 
     const dir = meta.path === '/' ? OUT : path.join(OUT, meta.path);
     await mkdir(dir, { recursive: true });

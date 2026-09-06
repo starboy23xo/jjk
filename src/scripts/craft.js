@@ -82,6 +82,8 @@
 
     // Safety net: anything sitting inside the observer's bottom margin at the
     // very end of the page can never satisfy it — reveal those on arrival.
+    // The listeners remove themselves once every target has revealed, so
+    // scrolling on a fully-revealed page costs nothing after that point.
     var flushTail = function () {
       if (window.innerHeight + window.scrollY < document.body.scrollHeight - 2) return;
       targets.forEach(function (el) {
@@ -90,6 +92,8 @@
           io.unobserve(el);
         }
       });
+      window.removeEventListener('scroll', flushTail);
+      window.removeEventListener('resize', flushTail);
     };
     window.addEventListener('scroll', flushTail, { passive: true });
     window.addEventListener('resize', flushTail, { passive: true });
